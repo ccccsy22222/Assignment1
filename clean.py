@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def clean_data(input1, input2, output):
-    
+
     df1 = pd.read_csv(input1)
     df2 = pd.read_csv(input2)
     merged_df = pd.merge(df1, df2, left_on='respondent_id', right_on='id')
@@ -31,3 +31,8 @@ if __name__ == "__main__":
     output = r"/Users/cccsy/Downloads/AI/AIAssignment/respondent_cleaned.csv"
 
     clean_data(input1, input2, output)
+
+    clean_data(input1, input2, output)
+    output_df = pd.read_csv(output)
+    num_rows, num_columns = output_df.shape
+    print("Shape of the output file: ", num_rows, "rows", num_columns, "columns")
